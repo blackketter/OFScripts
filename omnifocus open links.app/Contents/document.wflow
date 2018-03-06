@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>444.1</string>
+	<key>AMApplicationVersion</key>
+	<string>2.8</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}	set n to {}	-- Get the selection FIRST and then exit if nothing is selected.	tell application "OmniFocus"		tell content of first document window of front document			set tasksSelected to value of (selected trees where (class of its value is not item) and (class of its value is not folder))			if length of tasksSelected is 0 then				--display alert "You didn't select any OmniFocus tasks."				set tasksSelected to value of leaves where (class of its value is not folder)			end if		end tell	end tell	-- Do the actual work of setting the date and the flag, if necessary		tell application "OmniFocus"		repeat with i from 1 to (length of tasksSelected)			tell item i of tasksSelected				set end of n to note of it			end tell		end repeat		return n	end tellend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>FEC282C8-AB69-4D95-B2AC-97EA184DFB98</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>7DC45E65-B6F8-40A6-B320-421C13784904</string>
+				<key>UUID</key>
+				<string>3B3CF5BE-DA4E-4954-A894-825C5991B192</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>377.500000:496.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Unknown</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>type</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Extract Data from Text.action</string>
+				<key>ActionName</key>
+				<string>Extract URLs from Text</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>type</key>
+					<string>com.apple.Automator.text.url</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.ExtractDatafromText</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryText</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMExtractDataFromTextAction</string>
+				<key>InputUUID</key>
+				<string>6774EBC1-2E82-4972-BB81-15210C75DE9A</string>
+				<key>Keywords</key>
+				<array>
+					<string>extract</string>
+					<string>date</string>
+					<string>URL</string>
+					<string>address</string>
+					<string>phone number</string>
+					<string>email address</string>
+					<string>detect</string>
+					<string>text</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>E2FF2047-3226-4DA4-ABEB-68E5DC666DA6</string>
+				<key>UUID</key>
+				<string>342EFAA8-FB4B-40D3-98CA-BF7252F5CB8C</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>(* Primary Application used by this action goes here. *)</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>type</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>377.500000:598.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Extract Data from Text.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.url</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Safari</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict/>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.url</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Display Webpages 2.action</string>
+				<key>ActionName</key>
+				<string>Display Webpages</string>
+				<key>ActionParameters</key>
+				<dict/>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.DisplayWebpages</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryInternet</string>
+				</array>
+				<key>Class Name</key>
+				<string>Display_Webpages</string>
+				<key>InputUUID</key>
+				<string>0274EC0B-133F-4127-847B-E37B91F4471F</string>
+				<key>Keywords</key>
+				<array>
+					<string>URL</string>
+					<string>Web</string>
+					<string>Display</string>
+					<string>Open</string>
+					<string>Show</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>F66B3938-4A20-41E1-B988-46F983F8F91F</string>
+				<key>UUID</key>
+				<string>30487A05-857C-491F-AEBD-31053985DF23</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Safari</string>
+				</array>
+				<key>arguments</key>
+				<dict/>
+			</dict>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>52C2732B-8C2D-45A7-A1B2-17C4B6C3AF17</key>
+		<dict>
+			<key>from</key>
+			<string>342EFAA8-FB4B-40D3-98CA-BF7252F5CB8C - 342EFAA8-FB4B-40D3-98CA-BF7252F5CB8C</string>
+			<key>to</key>
+			<string>30487A05-857C-491F-AEBD-31053985DF23 - 30487A05-857C-491F-AEBD-31053985DF23</string>
+		</dict>
+		<key>AA25634F-45C2-4762-AEC9-6E28D15B90B7</key>
+		<dict>
+			<key>from</key>
+			<string>3B3CF5BE-DA4E-4954-A894-825C5991B192 - 3B3CF5BE-DA4E-4954-A894-825C5991B192</string>
+			<key>to</key>
+			<string>342EFAA8-FB4B-40D3-98CA-BF7252F5CB8C - 342EFAA8-FB4B-40D3-98CA-BF7252F5CB8C</string>
+		</dict>
+	</dict>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.application</string>
+	</dict>
+</dict>
+</plist>
