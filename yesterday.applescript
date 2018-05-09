@@ -19,8 +19,9 @@ tell application "OmniFocus"
 			set ayer to ayer - oneday
 			
 			--display alert date string of ayer
-			mark complete it
-			set completion date of it to ayer
+			--mark complete it
+			--set completion date of it to ayer
+			mark complete it completion date ayer
 		end tell
 	end repeat
 end tell

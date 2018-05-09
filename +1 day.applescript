@@ -25,12 +25,14 @@ tell application "OmniFocus"
 			end if
 			
 			set olddefer to defer date of it
-			if olddefer is not missing value then
-				set manana to olddefer + oneday
-				set defert to manana
-				set time of defert to (time of olddefer)
-				set defer date of it to defert
+			if olddefer is missing value then
+				set olddefer to the current date
+				set time of olddefer to 0
 			end if
+			set manana to olddefer + oneday
+			set defert to manana
+			set time of defert to (time of olddefer)
+			set defer date of it to defert
 			
 		end tell
 	end repeat
